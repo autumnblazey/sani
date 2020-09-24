@@ -136,23 +136,23 @@ export class SaniSoda {
     * should not be called more than once (well you can't lol)
     */
    private initcommandishes(): void {
-      const pinger: Pinggg = new Pinggg(this);
+      // const pinger: Pinggg = new Pinggg(this);
       this.commandishes.push(new OtherRoleAssignCommandish(this));
       // this.commandishes.push(new OtherRoleAssign(this));
       this.commandishes.push(new YearAssignCommandish(this));
       this.commandishes.push(new HelpCommandish(this));
 
       this.bot.on("message", msg => {
-         let done: boolean = false;
+         // let done: boolean = false;
 
          if (msg.author.bot) return;
          this.commandishes.forEach(commandishthing => {
             if (commandishthing.shouldhandle(msg)) {
-               done = true;
+               // done = true;
                commandishthing.handle(msg);
             }
          });
-         if (!done) if (pinger.shouldhandle(msg)) return void pinger.handle(msg);
+         // if (!done) if (pinger.shouldhandle(msg)) return void pinger.handle(msg);
       });
    }
 }
