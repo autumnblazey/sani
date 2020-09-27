@@ -3,14 +3,11 @@ on:
   - push
   - pull_request
 
-name: verify stuff
+name: lint code
 jobs:
-
   lint:
     name: lint
     runs-on: ubuntu-20.04
-    needs: setup
-
     steps:
       - name: checkout code
         uses: actions/checkout@v2
